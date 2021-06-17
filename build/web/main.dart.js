@@ -48288,7 +48288,7 @@ p=$.a68()
 $.au()
 o=$.b_().b.a.f
 o=o.length===0?C.hq:C.b.gD(o)
-return new U.q_("/home","Randwish",q,p,C.k,new Y.Xh(),o,$.acb(),!1,s,r,null)},
+return new U.q_("/","Randwish",q,p,C.k,new Y.Xh(),o,$.acb(),!1,s,r,null)},
 $S:328}
 F.Yh.prototype={
 $1:function(a){return a.r==="/not-found"},
@@ -52195,7 +52195,7 @@ n=T.a4U(S.a7_(l,K.wy(4),l,n,l,l,C.a0),l,l,l,C.fY,l,A.fb(l,l,C.j,l,l,l,l,l,l,l,l,
 m=t.jH
 return X.l7(C.bd,k,p,C.F,o,C.dU,q,C.j,R.a92(l,l,l,l,V.Qb(C.bd,m),V.Qb(C.dU,m)),j,n,C.f_)})
 r($,"alr","abI",function(){var q=null,p=t.z
-return H.b([F.a3S(q,new A.yd(),C.ee,C.ak,q,!1,!0,q,"/home",!0,new T.IW(),q,q,q,q,q,q,p),F.a3S(q,new O.w7(),C.ee,C.ak,q,!1,!0,q,"/account",!0,new T.IX(),q,q,q,q,q,q,p),F.a3S(q,new L.za(),C.ee,C.ak,q,!1,!0,q,"/not-found",!0,new T.IY(),q,q,q,q,q,q,p)],t.Ey)})
+return H.b([F.a3S(q,new A.yd(),C.ee,C.ak,q,!1,!0,q,"/",!0,new T.IW(),q,q,q,q,q,q,p),F.a3S(q,new O.w7(),C.ee,C.ak,q,!1,!0,q,"/account",!0,new T.IX(),q,q,q,q,q,q,p),F.a3S(q,new L.za(),C.ee,C.ak,q,!1,!0,q,"/not-found",!0,new T.IY(),q,q,q,q,q,q,p)],t.Ey)})
 r($,"amN","acm",function(){return new P.w()})})();(function nativeSupport(){!function(){var s=function(a){var m={}
 m[a]=1
 return Object.keys(hunkHelpers.convertToFastObject(m))[0]}
