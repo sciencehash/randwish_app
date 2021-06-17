@@ -17,21 +17,51 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="An activity and task management app for people who are not disciplined but hard-working.">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="randwish_app">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#0896c5">
+  <link rel="shortcut icon" href="icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#0896c5">
+  <meta name="msapplication-config" content="icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
   <title>Randwish - Activity and task management</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <div style="margin: 50px; color: #555 !important;">Loading...</div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAMQfSv3kxmd2bRts75eDt_9UU8CX0uMD0",
+      authDomain: "randwish-app.firebaseapp.com",
+      projectId: "randwish-app",
+      storageBucket: "randwish-app.appspot.com",
+      messagingSenderId: "377673191256",
+      appId: "1:377673191256:web:40dbf30e5b54e4c1d5df2d",
+      measurementId: "G-BGXDV6Y95P"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    var serviceWorkerVersion = '14311692';
+    var serviceWorkerVersion = '3942650785';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
