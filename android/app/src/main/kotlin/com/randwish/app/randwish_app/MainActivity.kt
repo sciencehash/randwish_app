@@ -1,4 +1,4 @@
-package com.randwish.app.randwish_app
+package com.randwish.app
 
 import io.flutter.embedding.android.FlutterActivity
 

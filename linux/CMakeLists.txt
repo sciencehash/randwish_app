@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
 set(BINARY_NAME "randwish_app")
-set(APPLICATION_ID "com.randwish.app.randwish_app")
+set(APPLICATION_ID "com.randwish.app")
 
 cmake_policy(SET CMP0063 NEW)
 

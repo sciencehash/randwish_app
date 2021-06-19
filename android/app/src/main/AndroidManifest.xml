@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.randwish.app.randwish_app">
+    package="com.randwish.app">
    <application
-        android:label="randwish_app"
+        android:label="Randwish"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
