@@ -1,72 +1,45 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:randwish_app/app/core/icons/app_icons.dart';
+import 'package:randwish_app/app/modules/home/tabs/explorer_tab/widgets/top_bar.dart';
+import 'package:randwish_app/app/modules/home/widgets/app_bar.dart';
+import 'package:randwish_app/app/modules/home/widgets/bottom_navigation_bar.dart';
+import 'package:randwish_app/app/modules/home/widgets/floating_action_button.dart';
+import 'package:randwish_app/app/modules/home/widgets/view_by_bottom_tab.dart';
+import 'package:randwish_app/app/widgets/ensure_student_is_ready.dart';
 
 import '../controllers/home_controller.dart';
 
-class HomeView extends GetView<HomeController> {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Shader linearGradient = LinearGradient(
-      colors: <Color>[Colors.pink, Colors.green],
-    ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('HomeView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Text(
-              'HomeView is working',
-              style: TextStyle(fontSize: 20),
-            ),
-            RadiantGradientMask(
-              child: Icon(
-                AppIcons.current_activity_tab,
-                size: 150,
-                color: Colors.white,
-              ),
-            ),
-            // Container(
-            //   width: 21,
-            //   height: 21.84,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(8),
-            //     gradient: LinearGradient(
-            //       begin: Alignment.topLeft,
-            //       end: Alignment.bottomRight,
-            //       colors: [Color(0xff4f72e6), Color(0xff7a5ee8)],
-            //     ),
-            //   ),
-            //   child: Icon(AppIcons.current_activity_tab),
-            // )
-          ],
-        ),
-      ),
+    return EnsureStudentIsReady(
+      child: HomeViewContent(),
     );
   }
 }
 
-class RadiantGradientMask extends StatelessWidget {
-  final Widget child;
-
-  RadiantGradientMask({
-    required this.child,
-  });
-
+class HomeViewContent extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (bounds) => LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xff4f72e6), Color(0xff7a5ee8)],
-      ).createShader(bounds),
-      child: child,
+    final _homeCtrl = Get.find<HomeController>(tag: 'home');
+
+    return Scaffold(
+      body: Scrollbar(
+        isAlwaysShown: true,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            HomeAppBar(
+              bottom: ExplorerTabTopBar(),
+              // expandedHeight: 155,
+            ),
+            ViewByBottomTab(),
+          ],
+        ),
+      ),
+      bottomNavigationBar: HomeBottomNavigationBar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: HomeFloatingActionButton(),
     );
   }
 }

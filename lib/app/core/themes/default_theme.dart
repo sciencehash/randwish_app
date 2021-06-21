@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class DefaultTheme {
   static ThemeData data = ThemeData(
     visualDensity: VisualDensity.compact,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: Color(0xFFFDFDFD),
     accentColor: Colors.blueAccent,
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.white,
       elevation: 0,
+      backgroundColor: Color(0xFFFDFDFD),
       textTheme: TextTheme(
         headline6: TextStyle(
           color: Colors.black87,
@@ -32,8 +32,8 @@ class DefaultTheme {
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       unselectedItemColor: Colors.black87,
-      selectedItemColor: Colors.blue.shade900,
-      backgroundColor: Colors.transparent,
+      selectedItemColor: Color(0xFF4F72E6),
+      backgroundColor: Colors.white,
       elevation: 0,
       showUnselectedLabels: false,
       showSelectedLabels: false,
