@@ -28,9 +28,23 @@
 
   <title>Randwish - Activity and task management</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- CSS loading indicator -->
+  <style>body{background:#fff}.loading{position:fixed;top:50%;left:50%;height:1rem;width:1rem;transform:translateX(-50%) translateY(-50%)}.container{position:absolute;top:0;left:0;height:1rem;width:1rem}.block{position:absolute;top:0;left:0;height:1rem;width:1rem}.block>.item{position:absolute;height:1rem;width:1rem;background:#4f72e6;animation:move 1.5s linear infinite}.block>.item:nth-of-type(1){top:-1rem;left:-1rem;animation-delay:-1.3125s}.block>.item:nth-of-type(2){top:-1rem;left:0;animation-delay:-1.125s}.block>.item:nth-of-type(3){top:-1rem;left:1rem;animation-delay:-.9375s}.block>.item:nth-of-type(4){top:0;left:1rem;animation-delay:-.75s}.block>.item:nth-of-type(5){top:1rem;left:1rem;animation-delay:-.5625s}.block>.item:nth-of-type(6){top:1rem;left:0;animation-delay:-375ms}.block>.item:nth-of-type(7){top:1rem;left:-1rem;animation-delay:-.1875s}.block>.item:nth-of-type(8){top:0;left:-1rem;animation-delay:0s}@keyframes move{0%{transform:rotate(0) scale(1);animation-timing-function:ease-in}10%{transform:rotate(90deg) scale(0)}50%{transform:rotate(90deg) scale(0);animation-timing-function:ease-out}60%{transform:rotate(180deg) scale(1)}100%{transform:rotate(180deg) scale(1)}}</style>
 </head>
 <body>
-  <div style="margin: 50px; color: #555 !important;">Loading...</div>
+  <div class='loading'>
+    <div class='block'>
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+        <div class='item'></div>
+    </div>
+  </div>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
@@ -61,7 +75,7 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    var serviceWorkerVersion = '4144278251';
+    var serviceWorkerVersion = '3508782332';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {

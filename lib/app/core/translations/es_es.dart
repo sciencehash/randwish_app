@@ -136,7 +136,7 @@ const Map<String, String> es_ES = {
   'We will notify you when the beta stage concludes.':
       'Te notificaremos cuando la etapa beta concluya.',
   'Note': 'Nota',
-  'Uolia Learning will always be 100% free for local use, the Premium plan adds synchronization between devices and collaboration functionalities between students.':
+  'Uolia Learning will always be 100% free for local use, the Premium plan adds synchronization between devices and collaboration functionalities between users.':
       'Uolia Learning será siempre 100% gratis para uso local, el plan Premium añade la sincronización entre dispositivos y las funcionalidades de colaboración entre estudiantes.',
   'CONTINUE': 'CONTINUAR',
   'Get the Android app': 'Obtén la app para Android',

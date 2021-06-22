@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:hive/hive.dart';
-import 'package:randwish_app/app/data/models/student.dart';
-import 'package:randwish_app/app/data/services/student_service.dart';
+import 'package:randwish_app/app/data/models/app_user.dart';
+import 'package:randwish_app/app/data/services/app_user_service.dart';
 
-class StudentHiveProvider extends StudentService {
+class AppUserHiveProvider extends AppUserService {
   // Hive box instance
   late Box _hiveBox;
 
@@ -14,20 +14,20 @@ class StudentHiveProvider extends StudentService {
   }
 
   ///
-  Future<Student?> byId(String id) async {
+  Future<AppUser?> byId(String id) async {
     final boxValue = _hiveBox.get(id);
     return boxValue != null
-        ? Student.fromJson(Map<String, dynamic>.from(boxValue))
+        ? AppUser.fromJson(Map<String, dynamic>.from(boxValue))
         : null;
   }
 
   ///
-  Stream<Student?> watchById(String id) async* {
+  Stream<AppUser?> watchById(String id) async* {
     // Get value to the first yield from the storage
     var firstYieldValue = _hiveBox.get(id);
     // Send initial yield
     yield firstYieldValue != null
-        ? Student.fromJson(
+        ? AppUser.fromJson(
             Map<String, dynamic>.from(
               firstYieldValue,
             ),
@@ -37,18 +37,18 @@ class StudentHiveProvider extends StudentService {
     // Send yield for changes
     yield* _hiveBox.watch(key: id).map((event) {
       return event.value != null
-          ? Student.fromJson(Map<String, dynamic>.from(event.value))
+          ? AppUser.fromJson(Map<String, dynamic>.from(event.value))
           : null;
     });
   }
 
   ///
-  Future<void> add(Student user) async {
+  Future<void> add(AppUser user) async {
     await _hiveBox.put(user.id, user.toJson());
   }
 
   ///
-  Future<void> update(Student user) async {
+  Future<void> update(AppUser user) async {
     await _hiveBox.put(user.id, user.toJson());
   }
 

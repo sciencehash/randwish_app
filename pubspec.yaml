@@ -36,6 +36,7 @@ dependencies:
   url_launcher:
   random_color: ^1.0.6-nullsafety
   date_time_format: ^2.0.1
+  uuid: ^3.0.4
 
 dev_dependencies:
   flutter_test:

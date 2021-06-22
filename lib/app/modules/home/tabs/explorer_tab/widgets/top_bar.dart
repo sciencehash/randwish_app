@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:randwish_app/app/core/icons/app_icons.dart';
+import 'package:randwish_app/app/modules/home/tabs/explorer_tab/widgets/dialogs/random_activity_dialog.dart';
 
 class ExplorerTabTopBar extends StatelessWidget implements PreferredSizeWidget {
   const ExplorerTabTopBar({Key? key}) : super(key: key);
@@ -33,7 +35,9 @@ class ExplorerTabTopBar extends StatelessWidget implements PreferredSizeWidget {
                   color: Color(0xFF7560E8),
                 ),
                 onPressed: () {
-                  //
+                  Get.dialog(
+                    RandomActivityDialogContent(),
+                  );
                 },
               ),
               IconButton(

@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
 import 'package:randwish_app/app/modules/home/tabs/explorer_tab/widgets/top_bar.dart';
 import 'package:randwish_app/app/modules/home/widgets/app_bar.dart';
 import 'package:randwish_app/app/modules/home/widgets/bottom_navigation_bar.dart';
 import 'package:randwish_app/app/modules/home/widgets/floating_action_button.dart';
 import 'package:randwish_app/app/modules/home/widgets/view_by_bottom_tab.dart';
-import 'package:randwish_app/app/widgets/ensure_student_is_ready.dart';
-
-import '../controllers/home_controller.dart';
+import 'package:randwish_app/app/widgets/ensure_app_user_is_ready.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return EnsureStudentIsReady(
+    // Ensure that AppUser in AppUserController is ready and loaded
+    return EnsureAppUserIsReady(
       child: HomeViewContent(),
     );
   }
 }
 
-class HomeViewContent extends GetView<HomeController> {
+class HomeViewContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _homeCtrl = Get.find<HomeController>(tag: 'home');
-
     return Scaffold(
       body: Scrollbar(
         isAlwaysShown: true,
@@ -31,7 +27,6 @@ class HomeViewContent extends GetView<HomeController> {
           slivers: <Widget>[
             HomeAppBar(
               bottom: ExplorerTabTopBar(),
-              // expandedHeight: 155,
             ),
             ViewByBottomTab(),
           ],

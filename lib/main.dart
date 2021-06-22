@@ -9,7 +9,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'package:randwish_app/app/controllers/auth_controller.dart';
 import 'package:randwish_app/app/core/services/translation_service.dart';
-import 'package:randwish_app/app/controllers/student_controller.dart';
+import 'package:randwish_app/app/controllers/app_user_controller.dart';
 import 'package:randwish_app/app/core/themes/dark_theme.dart';
 import 'package:randwish_app/app/core/themes/default_theme.dart';
 import 'package:randwish_app/app/routes/app_pages.dart';
@@ -36,11 +36,15 @@ class _AppState extends State<App> {
   Future<FirebaseApp> _initialization() async {
     if (kIsWeb) {
       await Hive.openBox('users');
+      await Hive.openBox('categories');
+      await Hive.openBox('activities');
     } else {
       Directory appDocDir = await getApplicationSupportDirectory();
       String appDocPath = appDocDir.path;
 
       await Hive.openBox('users', path: appDocPath);
+      await Hive.openBox('categories', path: appDocPath);
+      await Hive.openBox('activities', path: appDocPath);
     }
 
     final firebaseApp = await Firebase.initializeApp();
@@ -50,8 +54,8 @@ class _AppState extends State<App> {
       permanent: true,
     );
 
-    Get.put<StudentController>(
-      StudentController(),
+    Get.put<AppUserController>(
+      AppUserController(),
       permanent: true,
     );
 
